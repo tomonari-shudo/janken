@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>じゃんけんゲーム</title>
+</head>
+<body>
+  <h1>じゃんけんゲーム</h1>
+  <p id="paragraph">最初はグー！じゃんけん・・・</p>
+  <div id="gameArea">
+    <img src="img/yaruki_moeru_man.png" id="img-Enemy">
+    <div>
+      <img src="img/janken_gu.png" id="img-gu" onclick="game(0)">
+      <img src="img/janken_choki.png" id="img-choki" onclick="game(1)">
+      <img src="img/janken_pa.png" id="img-pa" onclick="game(2)">
+    </div>
+    <h1 id="result"></h1>
+  </div>
+  <button id="reStart" class="hide">もう一度挑戦する</button>
+  <button id="score" class="hide">結果を表示</button>
+  <script src="script.js"></script>
+</body>
+</html>
