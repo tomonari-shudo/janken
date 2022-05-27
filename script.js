@@ -55,11 +55,11 @@ function game(num){
    * CPUの出した手を画面に表示する
    */
   if(randomNum === 0){
-    imgEnemy.src = 'img/janken_gu.png';
+    imgEnemy.src = 'img/img_gu.png';
   }else if(randomNum === 1){
-    imgEnemy.src = 'img/janken_choki.png';
+    imgEnemy.src = 'img/img_choki.png';
   }else if(randomNum === 2){
-    imgEnemy.src = 'img/janken_pa.png';
+    imgEnemy.src = 'img/img_pa.png';
   }
   /**
    * 勝敗を判定して結果を画面に表示
@@ -98,7 +98,7 @@ reStartButton.onclick = () => {
   scoreButton.classList.remove('hide');
   gameArea.classList.remove('hide');
   paragraph.innerText = '最初はグー！じゃんけん・・・';
-  imgEnemy.src = 'img/yaruki_moeru_man.png';
+  imgEnemy.src = 'img/enemy.png';
   imgGu.classList.remove('hide');
   imgChoki.classList.remove('hide');
   imgPa.classList.remove('hide');
