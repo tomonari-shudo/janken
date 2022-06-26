@@ -1,6 +1,6 @@
-const imgGu = document.getElementById('img-gu');
-const imgChoki = document.getElementById('img-choki');
-const imgPa = document.getElementById('img-pa');
+const imgGu = document.getElementById('imgGu');
+const imgChoki = document.getElementById('imgChoki');
+const imgPa = document.getElementById('imgPa');
 const imgRival = document.getElementById('imgRival');
 const paragraph = document.getElementById('paragraph');
 const resultText = document.getElementById('result');
@@ -55,11 +55,11 @@ function game(num){
    * CPUの出した手を画面に表示する
    */
   if(randomNum === 0){
-    imgRival.src = 'img/img_gu.png';
+    imgRival.src = 'img/imgGu.png';
   }else if(randomNum === 1){
-    imgRival.src = 'img/img_choki.png';
+    imgRival.src = 'img/imgChoki.png';
   }else if(randomNum === 2){
-    imgRival.src = 'img/img_pa.png';
+    imgRival.src = 'img/imgPa.png';
   }
   /**
    * 勝敗を判定して結果を画面に表示
