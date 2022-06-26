@@ -9,7 +9,7 @@ const scoreButton = document.getElementById('score');
 const gameArea = document.getElementById('gameArea');
 
 let player = [];
-let enemy = [];
+let rival = [];
 let result = [];
 let win = 0;
 let lose = 0;
@@ -50,7 +50,7 @@ function game(num){
 
   //0~2までの乱数を作成(=> CPUの手 0:グー 1:チョキ 2:パー)
   const randomNum = Math.floor(Math.random()*3);
-  enemy.push(randomNum);
+  rival.push(randomNum);
   /**
    * CPUの出した手を画面に表示する
    */
@@ -116,7 +116,7 @@ scoreButton.onclick = () => {
   for(let i=0;i<result.length;i++){
     text += i+1+ '戦目 ' + winOrLose[result[i]];
     text += ' [あなたの手：' + handArray[player[i]];
-    text += ', 相手の手：' + handArray[enemy[i]] + ']\n';
+    text += ', 相手の手：' + handArray[rival[i]] + ']\n';
   }
   gameArea.classList.add('hide');
   paragraph.innerText = text;
