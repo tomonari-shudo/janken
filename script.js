@@ -114,7 +114,9 @@ reStartButton.onclick = () => {
 scoreButton.onclick = () => {
   let text = (win + lose + draw) + '戦: ' + win + '勝 ' + lose + '敗 ' + draw + '分\n\n';
   for(let i=0;i<result.length;i++){
-    text += i+1+ '戦目 ' + winOrLose[result[i]] + ' [あなたの手：' + handArray[player[i]] + ', 相手の手：' + handArray[enemy[i]] + ']\n';
+    text += i+1+ '戦目 ' + winOrLose[result[i]];
+    text += ' [あなたの手：' + handArray[player[i]];
+    text += ', 相手の手：' + handArray[enemy[i]] + ']\n';
   }
   gameArea.classList.add('hide');
   paragraph.innerText = text;
