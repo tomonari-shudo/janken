@@ -1,7 +1,7 @@
 const imgGu = document.getElementById('img-gu');
 const imgChoki = document.getElementById('img-choki');
 const imgPa = document.getElementById('img-pa');
-const imgEnemy = document.getElementById('img-Enemy');
+const imgRival = document.getElementById('imgRival');
 const paragraph = document.getElementById('paragraph');
 const resultText = document.getElementById('result');
 const reStartButton = document.getElementById('reStart');
@@ -55,11 +55,11 @@ function game(num){
    * CPUの出した手を画面に表示する
    */
   if(randomNum === 0){
-    imgEnemy.src = 'img/img_gu.png';
+    imgRival.src = 'img/img_gu.png';
   }else if(randomNum === 1){
-    imgEnemy.src = 'img/img_choki.png';
+    imgRival.src = 'img/img_choki.png';
   }else if(randomNum === 2){
-    imgEnemy.src = 'img/img_pa.png';
+    imgRival.src = 'img/img_pa.png';
   }
   /**
    * 勝敗を判定して結果を画面に表示
@@ -98,7 +98,7 @@ reStartButton.onclick = () => {
   scoreButton.classList.remove('hide');
   gameArea.classList.remove('hide');
   paragraph.innerText = '最初はグー！じゃんけん・・・';
-  imgEnemy.src = 'img/enemy.png';
+  imgRival.src = 'img/imgRival.png';
   imgGu.classList.remove('hide');
   imgChoki.classList.remove('hide');
   imgPa.classList.remove('hide');
