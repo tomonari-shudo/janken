@@ -16,7 +16,7 @@ let enemy = [];
 let result = [];
 let handMap = new Map([[0, 'グー'], [1, 'チョキ'], [2, 'パー']]);
 let winOrLose = new Map([[0, '勝ち'], [1, '負け'], [2, 'あいこ']]);
-let flag = false;
+let endFlag = false;
 
 /**
  * じゃんけんゲームを実行
@@ -26,12 +26,12 @@ function game(num){
   /**
    * 勝敗画面であればこの後の処理を行わない
    */
-  if(flag){
+  if(endFlag){
     return 0;
   }
   player.push(num);
   //
-  flag=true;
+  endFlag=true;
   //掛け声を画面に表示
   paragraph.innerText = 'ポン！'
   /**
@@ -105,7 +105,7 @@ reStartButton.onclick = () => {
   resultText.innerText = '';
   reStartButton.classList.add('hide');
   scoreButton.classList.add('hide');
-  flag=false;
+  endFlag=false;
 }
 
 /**
