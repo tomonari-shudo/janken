@@ -11,9 +11,11 @@ const gameArea = document.getElementById('gameArea');
 let player = [];
 let enemy = [];
 let result = [];
-let resultMap = new Map([['勝ち', 0], ['負け', 0], ['あいこ', 0]]);
-let handMap = new Map([[0, 'グー'], [1, 'チョキ'], [2, 'パー']]);
-let winOrLose = new Map([[0, '勝ち'], [1, '負け'], [2, 'あいこ']]);
+let win = 0;
+let lose = 0;
+let draw = 0;
+let handArray = ['グー', 'チョキ', 'パー'];
+let winOrLose = ['勝ち', '負け', 'あいこ'];
 let endFlag = false;
 
 /**
@@ -63,19 +65,24 @@ function game(num){
    * 勝敗を判定して結果を画面に表示
    */
   if(num === randomNum){
-    resultMap.set('あいこ', resultMap.get('あいこ')+1);
+    resultText.innerText = 'あいこです';
+    draw++;
     result.push(2);
   }else if(num === 0 && randomNum === 1){
-    resultMap.set('勝ち', resultMap.get('勝ち')+1);
+    resultText.innerText = '勝ち';
+    win++;
     result.push(0);
   }else if(num === 1 && randomNum === 2){
-    resultMap.set('勝ち', resultMap.get('勝ち')+1);
+    resultText.innerText = '勝ち';
+    win++;
     result.push(0);
   }else if(num === 2 && randomNum === 0){
-    resultMap.set('勝ち', resultMap.get('勝ち')+1);
+    resultText.innerText = '勝ち';
+    win++;
     result.push(0);
   }else{
-    resultMap.set('負け', resultMap.get('負け')+1);
+    resultText.innerText = '負け';
+    lose++;
     result.push(1);
   }
   //再戦ボタンを表示する
@@ -105,10 +112,9 @@ reStartButton.onclick = () => {
  * 「結果を表示」ボタンを押した時の処理
  */
 scoreButton.onclick = () => {
-  let text = (resultMap.get('勝ち') + resultMap.get('負け') + resultMap.get('あいこ')) +
-   '戦: ' + resultMap.get('勝ち') + '勝 ' + resultMap.get('負け') + '敗 ' + resultMap.get('あいこ') + '分\n\n';
+  let text = (win + lose + draw) + '戦: ' + win + '勝 ' + lose + '敗 ' + draw + '分\n\n';
   for(let i=0;i<result.length;i++){
-    text += i+1+ '戦目 ' + winOrLose.get(result[i]) + ' [あなたの手：' + handMap.get(player[i]) + ', 相手の手：' + handMap.get(enemy[i]) + ']\n';
+    text += i+1+ '戦目 ' + winOrLose[result[i]] + ' [あなたの手：' + handArray[player[i]] + ', 相手の手：' + handArray[enemy[i]] + ']\n';
   }
   gameArea.classList.add('hide');
   paragraph.innerText = text;
